@@ -3,7 +3,9 @@ const app = express()
 const path = require("path")
 const { NotFound, ErrorHandler } = require('./utils/errorHandler')
 const Router = require('./router')
+const connectdb = require('./utils/dbConnection')
 
+connectdb();
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(express.static('public'))
