@@ -5,6 +5,7 @@ const { NotFound, ErrorHandler } = require('./utils/errorHandler')
 const Router = require('./router')
 const connectdb = require('./utils/dbConnection')
 const cookieParser = require('cookie-parser')
+var expressLayouts = require('express-ejs-layouts');
 const app = express()
 app.use(cookieParser())
 
@@ -13,13 +14,13 @@ app.use(cookieParser())
 connectdb();
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+app.use(expressLayouts);
 app.use(express.static('public'))
 app.set("view engine",'ejs')
+app.set('layout','./layouts/main.ejs')
 app.set("views",path.join(__dirname, "views"))
 
-app.get('/',(req,res)=>{
-    res.render('index',{title: "Authentication",user:"Guest"})
-})
+
 app.use(Router)
 app.use(NotFound)
 app.use(ErrorHandler)
