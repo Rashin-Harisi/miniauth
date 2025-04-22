@@ -1,8 +1,6 @@
+const { loginCntroller } = require("../controllers/login.controller");
 const loginRouter = require("express").Router();
 
-loginRouter.post('/login',(req,res)=>{
-    const {username, password} = req.body
-    res.send(`Hi ${username} with ${password} from loging route`)
-})
+loginRouter.post('/login',loginCntroller)
 
 module.exports= loginRouter

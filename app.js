@@ -1,9 +1,14 @@
 const express = require('express')
-const app = express()
+const dotenv = require('dotenv').config()
 const path = require("path")
 const { NotFound, ErrorHandler } = require('./utils/errorHandler')
 const Router = require('./router')
 const connectdb = require('./utils/dbConnection')
+const cookieParser = require('cookie-parser')
+const app = express()
+app.use(cookieParser())
+
+
 
 connectdb();
 app.use(express.json())
