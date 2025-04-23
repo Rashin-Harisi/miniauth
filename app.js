@@ -6,11 +6,20 @@ const Router = require('./router')
 const connectdb = require('./utils/dbConnection')
 const cookieParser = require('cookie-parser')
 var expressLayouts = require('express-ejs-layouts');
+const flash = require('flash');
+const session = require("express-session")
+
+
+
+
 const app = express()
 app.use(cookieParser())
-
-
-
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+  }))
+app.use(flash())
 connectdb();
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
