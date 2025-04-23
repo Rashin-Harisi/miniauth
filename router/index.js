@@ -14,6 +14,9 @@ Router.get("/auth/login",(req,res)=>{
 Router.get("/auth/signup",(req,res)=>{
     res.render('signup',{title: "Signup"})
 })
+Router.get("/profile",autherization,(req,res)=>{
+    res.render('profile',{title: "Profile"})
+})
 Router.use('/auth', loginRouter)
 Router.use('/auth', signupRouter)
 Router.use('/', autherization ,profileRouter)

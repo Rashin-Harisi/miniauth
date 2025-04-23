@@ -17,7 +17,7 @@ async function autherization(req, res, next) {
       }
     }
     req.user = {
-      userName : user.username,
+      username : user.username,
       email: user.email
     }
      next();

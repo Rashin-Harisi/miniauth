@@ -1,4 +1,5 @@
 const { hashedPassword } = require("../utils/hashBcrypt");
+const UserModel = require("../models/user.mode");
 
 const signupController = async (req, res, next) => {
   try {

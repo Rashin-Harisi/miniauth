@@ -1,11 +1,10 @@
-.container{
+.container {
   width: 50%;
   height: 700px;
   margin: auto;
-  border: 1px solid black;
-  margin-top:30px;
+  margin-top: 30px;
 }
-.header{
+.header {
   width: 70%;
   margin: auto;
   margin-top: 20px;
@@ -14,28 +13,110 @@
   justify-content: center;
   align-items: center;
 }
-.icon{
+.icon {
   width: 200px;
   height: 200px;
 }
-.title{
-  color:navy;
+.title {
+  color: navy;
 }
-.main{
- border: 1px solid red;
- width: 80%;
- margin: auto;
- padding-left: 10px;
+.main {
+  width: 80%;
+  margin: auto;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-.login{
-  border: 1px solid red;
- width: 80%;
- margin: auto;
- padding-left: 10px;
+.login {
+  width: 50%;
+  margin: auto;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: large;
 }
-.signup{
-  border: 1px solid red;
- width: 80%;
- margin: auto;
- padding-left: 10px;
+.form-group{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+input{
+  margin:10px;
+  border-width: 1.5px;
+  border-radius: 10px;
+  width:200px;
+  padding-left: 20px;
+}
+label{
+  margin: 10px;
+}
+.submit_button{
+  height: 40px;
+  width: 100px;
+  margin:20px 0;
+  border-radius: 10px;
+  border: 1.5px solid green;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+.signup {
+  width: 80%;
+  margin: auto;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: large;
+}
+.buttons {
+  border-radius: 10px;
+  height: 50px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.lo {
+  background-color: darkorange;
+  border: 1px solid orange;
+  color: white;
+}
+.si {
+  background-color: navy;
+  border: 1px solid blue;
+  color: white;
+}
+.pr {
+  background-color: darkgreen;
+  border: 1px solid green;
+  color: white;
+}
+.ho {
+  background-color: darkgray;
+  border: 1px solid gray;
+  color: white;
+}
+.logout{
+  background-color: red;
+  color: white;
+  border: 1.5px solid red;
+  border-radius: 10px;
+  width:100px;
+  height: 40px;
+  margin : 10px 0;
+}
+.profile-container{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  font-size: large;
 }
