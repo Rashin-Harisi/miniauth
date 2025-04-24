@@ -5,9 +5,10 @@ async function autherization(req, res, next) {
  try {
     const token = req.cookies.cookieToken;
     if (!token) {
-      return res.status(401).json({ message: "Authorization is falied. Please login again." });
+      return res.redirect('/auth/login')
     }
     const result = verifyToken(token)
+  
     
     const user = await UserModel.findOne({email:result.email})
     if(!user){
@@ -26,6 +27,24 @@ async function autherization(req, res, next) {
  }
 }
 
+function authnticatedUser(req, res, next) {
+  try {
+    const token = req.cookies.cookieToken;
+    if (!token) {
+      return next();
+    }
+    const result = verifyToken(token);
+    if (result) {
+      return res.redirect('/profile');
+    }
+    next();   
+  } catch (error) {
+    next();
+  }
+}
+
+
 module.exports = {
   autherization,
+  authnticatedUser
 };

@@ -110,6 +110,10 @@ label{
   width:100px;
   height: 40px;
   margin : 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 .profile-container{
   width: 50%;
@@ -119,4 +123,12 @@ label{
   align-items: center;
   margin: auto;
   font-size: large;
+}
+.flash_error{
+  color: red;
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
